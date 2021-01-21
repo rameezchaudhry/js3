@@ -276,6 +276,24 @@ function palindrome(a)
 }
 palindrome(prompt("check palindrome"));
 
+//14. The Geometrizer
+var radius = +prompt("Enter radius")
+function calcCircumference()
+{
+    
+    var circum = 2*(3.142)*radius;
+    document.write("Circumference of circle is "+circum +"<br>")
+
+}
+function calcArea()
+{
+    var area = (3.142)*radius*radius;
+    document.write("Area of circle is "+area +"<br>")
+
+}
+calcCircumference();
+calcArea();
+
 // chap 38-42 FUNCTIONS, SWITCHSTATEMENTS, WHILE… DOWHILE LOOPS 
 //1. Write a custom function power ( a, b ), to calculate the value of a raised to b
 function power(a,b){
@@ -397,3 +415,59 @@ i=0;
 document.write("occurrences of any two vowels "+ i)
 
 
+
+//8. The distance between two cities (in km.) is input through the keyboard. Write four functions to convert and print this distance in meters, feet, inches and centimeters.
+
+var distance = +prompt("Enter distance in KM");
+
+function meter(){
+var meter = distance*1000;
+return meter;
+}
+function feet(){
+    var feet = distance*3280.84;
+    return feet;
+}
+function inch(){
+    var inch = distance*39370.1;
+    return inch;
+}
+function centimeter(){
+    var centimeter =distance*100000;
+    return centimeter;
+}
+
+
+document.write(distance +"km  = "+meter() +"meters" + "<br>");
+document.write(distance +"km  = "+centimeter() +"centemeters" + "<br>");
+document.write(distance +"km  = "+inch() +"inch" + "<br>");
+document.write(distance +"km  = "+ feet() +"meters" + "<br>");
+
+
+//9 Write a program to calculate overtime pay of employees. Overtime is paid at the rate of Rs. 12.00 per hour for every hour worked above 40 hours. Assume that employees do not work for fractional part of an hour.
+
+function overtime(){
+var hour = +prompt("enter employe total work hour")
+if(hour>40)
+{
+var overtime = (hour-40)*12;
+}
+else{
+    alert("you are not eligible over time")
+}
+return overtime;
+}
+
+alert(overtime());
+
+
+//10. A cashier has currency notes of denominations 10, 50 and 100. If the amount to be withdrawn is input through the keyboard in hundreds, find the total number of currency notes of each denomination the cashier will have to give to the withdrawer
+function cash()
+{
+var drawer = +prompt("Enter value");
+var hundred = Math.floor(drawer/100);
+var fifty = Math.floor((drawer-(hundred*100))/50);
+var ten  =Math.floor((drawer-(hundred*100+fifty*50))/10);
+document.write("you will have "+hundred+" hundred note " +fifty+" fifty note "+ten+" ten notes ")
+}
+cash();
